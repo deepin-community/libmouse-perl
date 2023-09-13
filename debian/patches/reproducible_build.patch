@@ -1,0 +1,17 @@
+Description: Make the build reproducible: without this the file list is embedded in readdir order, which is not deterministic.
+Origin: vendor
+From: Reiner Herrmann <reiner@reiner-h.de>
+Reviewed-by: gregor herrmann <gregoa@debian.org>
+Last-Update: 2020-03-29
+
+--- a/tool/generate-mouse-tiny.pl
++++ b/tool/generate-mouse-tiny.pl
+@@ -79,7 +79,7 @@
+ # tell Perl we already have all of the Mouse files loaded:
+ EOF
+ 
+-for my $file (@files) {
++for my $file (sort @files) {
+     (my $inc = $file) =~ s{^lib/}{};
+     printf { $handle } "%-45s = __FILE__;\n", "\$INC{'$inc'}";
+ }

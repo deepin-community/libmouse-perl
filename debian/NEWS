@@ -1,0 +1,11 @@
+libmouse-perl (2.1.0-1) unstable; urgency=low
+
+  Upstream bumped the major version number due to a bug fix which changes
+  Mouse.pm's behaviour:
+
+    Merged the pull-request #13, which fixed an issue where the behavior
+    of role method confliction was different from Moose. This change might
+    affect your existing code so the major version has incremented.  See
+    t/030_roles/role_conflict_and_inheritance.t for details.
+
+ -- Axel Beckert <abe@debian.org>  Fri, 27 Dec 2013 03:49:56 +0100
