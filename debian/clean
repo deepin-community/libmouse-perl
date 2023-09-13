@@ -1,0 +1,3 @@
+lib/Mouse/Tiny.pm
+xs-src/*.c
+xs-src/xs_version.h
